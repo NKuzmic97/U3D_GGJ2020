@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Controller : MonoBehaviour {
-    [SerializeField] private Animator anim;
+    private Animator anim;
+
+    [SerializeField] private Transform planetLeft = null;
+    [SerializeField] private Transform planetRight = null;
+
+    [SerializeField] private Transform sunLeft = null;
+    [SerializeField] private Transform sunRight = null;
 
     private void Awake()
     {
@@ -13,7 +19,14 @@ public class Controller : MonoBehaviour {
     void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            anim.SetTrigger("IsActive");
+            if(planetLeft.position.x >= sunLeft.position.x && planetRight.position.x <= sunRight.position.x)
+            {
+                anim.SetTrigger("IsActive");
+            }
+            else
+            {
+                Debug.LogError("Majmune!");
+            }
         }
         else if (Input.GetMouseButtonUp(0))
         {
