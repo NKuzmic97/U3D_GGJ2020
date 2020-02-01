@@ -17,7 +17,7 @@ public class Controller : MonoBehaviour {
     }
 
     void Update () {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             if(planetLeft.position.x >= sunLeft.position.x && planetRight.position.x <= sunRight.position.x)
             {
@@ -27,10 +27,6 @@ public class Controller : MonoBehaviour {
             {
                 Debug.LogError("Majmune!");
             }
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            anim.ResetTrigger("IsActive");
         }
 	}
 }

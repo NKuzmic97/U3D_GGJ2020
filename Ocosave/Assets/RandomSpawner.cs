@@ -8,7 +8,7 @@ public class RandomSpawner : MonoBehaviour {
     [SerializeField] private float timeToSpawnMax = 3.0f;
 
 	[SerializeField] private GameObject fishObject = null;
-	[SerializeField] private GameObject bottleObject = null;
+	[SerializeField] private GameObject[] trashObject = null;
 
 	[SerializeField] private float fishThreshold = 70.0f;
     [SerializeField] private Transform placeToSpawn = null;
@@ -33,7 +33,8 @@ public class RandomSpawner : MonoBehaviour {
 
         else
         {
-            Instantiate(bottleObject, positionToSpawn, Quaternion.identity);
+            int randomIndex = Random.Range(0, trashObject.Length);
+            Instantiate(trashObject[randomIndex], positionToSpawn, Quaternion.identity);
         }
 
         elapsedTime = 0.0f;
