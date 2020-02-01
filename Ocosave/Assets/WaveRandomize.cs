@@ -4,13 +4,39 @@ using UnityEngine;
 
 public class WaveRandomize : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+    private float speed = 0.0f;
+    [SerializeField] private float minSpeed = -15.0f;
+    [SerializeField] private float maxSpeed = 15.0f;
+
+    private float timeElapsed = 0.0f;
+    private float time = 0.0f;
+    [SerializeField] private float minTime = 1.0f;
+    [SerializeField] private float maxTime = 5.0f;
+
+
+    void Awake () {
+        speed = Random.Range(minSpeed, maxSpeed);
+
+        if(speed == 0.0f)
+            speed = Random.Range(minSpeed, maxSpeed);
+
+        time = Random.Range(minTime, maxTime);
+    }
+
+    void Update () {
+        timeElapsed += Time.deltaTime;
+
+        if(timeElapsed >= time)
+        {
+            timeElapsed = 0.0f;
+            speed = -speed;
+        }
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    private void FixedUpdate()
+    {
+        gameObject.transform.position += transform.right * speed * Time.deltaTime;
+
+    }
 }

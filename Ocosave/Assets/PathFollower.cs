@@ -28,11 +28,14 @@ public class PathFollower : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-
         Timer += Time.deltaTime * MoveSpeed;
+    }
 
+    void FixedUpdate()
+    {
         if (Player.transform.position != CurrentPositionHolder)
         {
 
