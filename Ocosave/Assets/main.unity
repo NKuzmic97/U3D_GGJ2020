@@ -2741,12 +2741,15 @@ MonoBehaviour:
   elapsedTime: 0
   timeToSpawnMin: 1
   timeToSpawnMax: 3
-  fishObject: {fileID: 1286747504664336, guid: 56e80e872c6e9cf44accf8cfaa02631c, type: 2}
+  fishObject:
+  - {fileID: 1286747504664336, guid: 56e80e872c6e9cf44accf8cfaa02631c, type: 2}
+  - {fileID: 1286747504664336, guid: 48dea25c51386fa4385f6475552e7bfb, type: 2}
+  - {fileID: 1286747504664336, guid: 5ac60796e85099c45808d660bb5fac9c, type: 2}
   trashObject:
   - {fileID: 1922753451937836, guid: 2f074b615710595479be5f207f62e027, type: 2}
   - {fileID: 1922753451937836, guid: fe878b8b6964dc9458558740f1ae3042, type: 2}
   - {fileID: 1922753451937836, guid: c2891fd068866cb46b1b0ab1c4abad65, type: 2}
-  fishThreshold: 50
+  fishThreshold: 30
   placeToSpawn: {fileID: 778390512}
   maxY: {fileID: 554078907}
   minY: {fileID: 654017101}
